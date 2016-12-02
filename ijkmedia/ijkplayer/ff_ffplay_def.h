@@ -77,7 +77,7 @@
 #define BUFFERING_CHECK_PER_BYTES               (512)
 #define BUFFERING_CHECK_PER_MILLISECONDS        (500)
 
-#define MAX_QUEUE_SIZE (15 * 1024 * 1024)
+#define MAX_QUEUE_SIZE (1 * 1024 * 1024)
 #ifdef FFP_MERGE
 #define MIN_FRAMES 25
 #endif
