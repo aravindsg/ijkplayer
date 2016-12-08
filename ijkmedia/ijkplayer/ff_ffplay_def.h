@@ -63,7 +63,7 @@
 #include "ff_ffpipenode.h"
 #include "ijkmeta.h"
 
-#define DEFAULT_HIGH_WATER_MARK_IN_BYTES        (256 * 1024)
+#define DEFAULT_HIGH_WATER_MARK_IN_BYTES        (128 * 1024)
 
 /*
  * START: buffering after prepared/seeked
@@ -72,24 +72,24 @@
  */
 #define DEFAULT_FIRST_HIGH_WATER_MARK_IN_MS     (100)
 #define DEFAULT_NEXT_HIGH_WATER_MARK_IN_MS      (1 * 1000)
-#define DEFAULT_LAST_HIGH_WATER_MARK_IN_MS      (5 * 1000)
+#define DEFAULT_LAST_HIGH_WATER_MARK_IN_MS      (1 * 1000)
 
-#define BUFFERING_CHECK_PER_BYTES               (512)
-#define BUFFERING_CHECK_PER_MILLISECONDS        (500)
+#define BUFFERING_CHECK_PER_BYTES               (128)
+#define BUFFERING_CHECK_PER_MILLISECONDS        (100)
 
 #define MAX_QUEUE_SIZE (1 * 1024 * 1024)
 #ifdef FFP_MERGE
-#define MIN_FRAMES 25
+#define MIN_FRAMES 5
 #endif
-#define DEFAULT_MIN_FRAMES  50000
+#define DEFAULT_MIN_FRAMES  5
 #define MIN_MIN_FRAMES      5
-#define MAX_MIN_FRAMES      50000
+#define MAX_MIN_FRAMES      5
 #define MIN_FRAMES (ffp->dcc.min_frames)
 #define EXTERNAL_CLOCK_MIN_FRAMES 2
-#define EXTERNAL_CLOCK_MAX_FRAMES 10
+#define EXTERNAL_CLOCK_MAX_FRAMES 2
 
 /* Minimum SDL audio buffer size, in samples. */
-#define SDL_AUDIO_MIN_BUFFER_SIZE 512
+#define SDL_AUDIO_MIN_BUFFER_SIZE 128
 /* Calculate actual buffer size keeping in mind not cause too frequent audio callbacks */
 #define SDL_AUDIO_MAX_CALLBACKS_PER_SEC 30
 
